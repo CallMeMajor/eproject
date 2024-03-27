@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAVERICK DRESSES</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .highlight {
+            background: var(--navbar-bg-color);
+            padding-bottom: 16px;
+            padding: auto;
+            width: 100vw;
+
+        }
+        footer{
+    border-top: 2px solid orange;
+  }
+        body{
+            overflow-x: hidden;
+        }
+        .highlight-thumb {
+            position: relative;
+            overflow: hidden;
+            margin-top: 24px;
+            margin-bottom: 24px;
+            font-size: 20px;
+
+        }
+
+        .highlight-thumb::after {
+            content: "";
+            background: rgba(0, 0, 0, 0.65);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .highlight-thumb:hover .highlight-title {
+            opacity: 100;
+            visibility: visible;
+
+        }
+
+        .highlight-thumb:hover .highlight-icon {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .highlight-thumb:hover .highlight-image {
+            transform: scale(1.2);
+        }
+
+        .highlight-info {
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            text-align: center;
+        }
+
+        .highlight-image {
+            display: block;
+            width: 100%;
+            transition: transform 2s;
+        }
+
+        .highlight-title {
+            color: rgb(7, 7, 7);
+            transition: opacity 1s;
+            margin-bottom: 0;
+            font-size: 25px;
+        }
+
+        .highlight-icon {
+            color: var(--highlight-icon-color);
+            font-size: var(--h1-font-size);
+            opacity: 0;
+            transition: transform 1s;
+            visibility: hidden;
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .highlight-icon:hover {
+            color: var(--white-color);
+        }
+
+        @font-face {
+            font-family: myFont;
+            src: url(Azonix.otf);
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: myFont;
+        }
+
+        .dropdown button {
+            background-color: orange;
+            color: black;
+            border: 2px solid black;
+            width: 60px;
+            height: 45px;
+        }
+
+        #background {
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            height: 100vh;
+        }
+
+        .dropdown button {
+            background-color: orange;
+            color: black;
+            border: 2px solid black;
+            width: 60px;
+            height: 45px;
+        }
+
+        .dropdown-menu {
+            transform: translateX(-100px);
+        }
+
+        #background {
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            height: 100vh;
+        }
+
+        #img {
+            background-image: url(pexels-iqwan-alif-1206101.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 100vh;
+        }
+
+        #nav {
+            width: 100%;
+            position: fixed;
+        }
+
+        nav ul li a:hover {
+            color: #ccc;
+            text-decoration: underline #ccc;
+            text-shadow: 0 0 12px #ccc;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: orange;
+
+        }
+
+        .hp {
+            margin-top: -30px;
+            margin-left: -710px;
+            color: orange;
+            cursor: pointer;
+        }
+
+        .hpp {
+            margin-top: -30px;
+            margin-left: 90px;
+            color: orange;
+            cursor: pointer;
+        }
+
+        .hppp {
+            margin-top: -30px;
+            margin-left: 50px;
+            color: orange;
+            cursor: pointer;
+        }
+
+        .hpppp {
+            margin-top: -30px;
+            margin-left: 90px;
+            color: orange;
+            cursor: pointer;
+        }
+
+        .hppppp {
+            margin-top: -30px;
+            margin-left: 70px;
+            color: orange;
+            cursor: pointer;
+        }
+
+        .n1 {
+            margin-right: 100px;
+        }
+
+        .hp:hover {
+            color: #ccc;
+        }
+
+        .hpp:hover {
+            color: #ccc;
+        }
+
+        .hppp:hover {
+            color: #ccc;
+        }
+
+        .hpppp:hover {
+            color: #ccc;
+        }
+
+        .hppppp:hover {
+            color: #ccc;
+        }
+
+        #navbarNav {
+            color: orange;
+            /* margin-top: 20px;
+              margin-right: 110px; */
+        }
+
+        #hhh {
+            margin-top: -9px;
+            margin-right: 30px;
+            color: orange;
+        }
+
+        #hh {
+            margin-top: -50px;
+            color: orange;
+        }
+
+        .pp {
+            /* margins-top: 55px; */
+            /* margin-left: 30px;
+              margin-right: 20px; */
+        }
+
+        .tex {
+            text-align: center;
+            color: orange;
+            letter-spacing: 0.25em;
+            display: inline-block;
+        }
+
+        .hd {
+            top: 20px;
+            left: 10px;
+            border: none;
+        }
+
+        #kk2 {
+            width: 40px;
+            height: 40px;
+        }
+
+        #kk {
+            width: 300px;
+            height: 250px;
+        }
+
+        /* footer */
+        .main {
+            padding: 80px 90px 20px 80px;
+            line-height: 50px;
+            color: white;
+            background-color: black;
+        }
+
+        .anchor {
+            color: white;
+            text-decoration: none;
+        }
+
+        .foot {
+            color: orange;
+        }
+
+        .input {
+            width: 50%;
+            height: 75px;
+            border-radius: 8px;
+        }
+
+        .btn7 {
+            margin-left: 15px;
+        }
+
+        /* CSS */
+        .button-71 {
+            background-color: orange;
+            border: 0;
+            border-radius: 56px;
+            color: black;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 18px;
+            font-weight: 600;
+            outline: 0;
+            padding: 16px 21px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            transition: all .3s;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        .button-71:before {
+            background-color: initial;
+            background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+            border-radius: 125px;
+            content: "";
+            height: 50%;
+            left: 4%;
+            opacity: .5;
+            position: absolute;
+            top: 5px;
+            transition: all .3s;
+            width: 92%;
+        }
+
+        .button-71:hover {
+            box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+            transform: scale(1.05);
+        }
+
+        @media (min-width: 768px) {
+            .button-71 {
+                padding: 16px 48px;
+            }
+        }
+
+        #foot2 {
+            display: flex;
+            color: white;
+            background-color: black;
+            margin-bottom: -55px;
+            margin-top: 55px;
+            justify-content: center;
+        }
+
+        #lst1 {
+            list-style: none;
+            margin-left: -30px;
+        }
+
+        #lst2 {
+            list-style: none;
+            margin-left: -30px;
+        }
+
+
+        .ffff {
+            /* background-image: url(pexels-iqwan-alif-1206101.jpg); 
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover; */
+            background-image: url(img.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #image {
+            background-color: rgba(0, 0, 0, 0.5);
+
+
+        }
+
+        .ico {
+            background-color: #95d4bf3b;
+            border: 2px solid #95d4bf;
+            color: white;
+            border-radius: 8px;
+            width: 50px;
+            height: 50px;
+            padding: 6px;
+        }
+
+        .icon {
+            margin-top: 20px;
+            margin-right: 100px;
+        }
+
+        .hp {
+            margin-top: -130px;
+            margin-left: 47px;
+            color: #95d4bf;
+            cursor: pointer;
+        }
+
+        .hpp {
+            margin-top: -130px;
+            margin-left: 105px;
+            color: #95d4bf;
+            cursor: pointer;
+        }
+
+        .hppp {
+            margin-top: -130px;
+            margin-left: 145px;
+            color: #95d4bf;
+            cursor: pointer;
+        }
+
+        .hpppp {
+            margin-top: -130px;
+            margin-left: 140px;
+            color: #95d4bf;
+            cursor: pointer;
+        }
+
+        .hppppp {
+            margin-top: -130px;
+            margin-left: 110px;
+            color: #95d4bf;
+            cursor: pointer;
+        }
+
+        .hp:hover {
+            color: #27282c;
+        }
+
+        .hpp:hover {
+            color: #27282c;
+        }
+
+        .hppp:hover {
+            color: #27282c;
+        }
+
+        .hpppp:hover {
+            color: #27282c;
+        }
+
+        .hppppp:hover {
+            color: #27282c;
+        }
+
+        section {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .clr {
+            background-color: black;
+            width: 337.5px;
+            height: 450px;
+            margin-right: 14px;
+        }
+
+        .but {
+            background-color: orange;
+            width: 200px;
+            margin-bottom: 4px;
+            margin-top: 4px;
+        }
+
+        .txt {
+            color: #ffa500;
+        }
+
+        .but:hover {
+            box-shadow: 0px 0px 20px #ffa500cc;
+            border: 1px solid #f7bb4d;
+
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        .main2 {
+            background-color: #ffa500;
+        }
+
+        .categories {
+            padding-bottom: 0px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 800px;
+        }
+
+        .size {
+            height: 300px;
+        }
+
+        .rec {
+            background-color: black;
+            border-radius: 40px;
+            width: 400px;
+            color: #ffa500;
+            height: 50px;
+            padding: 5px;
+            margin-right: 30PX;
+            margin-bottom: 10px;
+
+        }
+
+        .rec:hover {
+            box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.8);
+            border: 4px solid #ffa500;
+        }
+
+        .cat {
+            font-size: 25px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            padding-top: 4px;
+        }
+
+        .max {
+            background-color: black;
+            border-radius: 40px;
+            color: #ffa500;
+            height: 50px;
+            padding: 5px;
+            margin-right: 30PX;
+            margin-bottom: 10px;
+        }
+
+        .max:hover {
+            box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.8);
+            border: 4px solid #ffa500;
+        }
+
+
+        h4 {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        .sec {
+            background-color: #000000 rgba(0, 0, 0, 0.4);
+        }
+
+        .headdd {
+            color: #000;
+            text-shadow: 6px 6px 10px rgba(255, 165, 0, 0.8);
+            margin-bottom: 70px;
+            margin-top: 100px;
+        }
+        .main {
+            padding: 80px 90px 20px 80px;
+            line-height: 50px;
+            color: white;
+            background-color: black;
+        }
+
+        .anchor {
+            color: white;
+            text-decoration: none;
+        }
+
+        .foot {
+            color: orange;
+        }
+
+        .input {
+            width: 50%;
+            height: 75px;
+            border-radius: 8px;
+        }
+
+        .btn7 {
+            margin-left: 15px;
+        }
+
+        /* CSS */
+        .button-71 {
+            background-color: orange;
+            border: 0;
+            border-radius: 56px;
+            color: black;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 18px;
+            font-weight: 600;
+            outline: 0;
+            padding: 16px 21px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            transition: all .3s;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+
+        .button-71:before {
+            background-color: initial;
+            background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+            border-radius: 125px;
+            content: "";
+            height: 50%;
+            left: 4%;
+            opacity: .5;
+            position: absolute;
+            top: 5px;
+            transition: all .3s;
+            width: 92%;
+        }
+
+        .button-71:hover {
+            box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+            transform: scale(1.05);
+        }
+
+        @media (min-width: 768px) {
+            .button-71 {
+                padding: 16px 48px;
+            }
+        }
+
+        #foot2 {
+            display: flex;
+            color: white;
+            background-color: black;
+            margin-bottom: -55px;
+            margin-top: 55px;
+            justify-content: center;
+        }
+
+        #lst1 {
+            list-style: none;
+            margin-left: -30px;
+        }
+
+        #lst2 {
+            list-style: none;
+            margin-left: -30px;
+        }
+
+        .cats {
+            text-decoration: none;
+            color: orange;
+        }
+
+        .cats:hover {
+            color: white;
+        }
+
+        #btn6 {
+            position: fixed;
+            bottom: 50px;
+            left: 1200px;
+            height: 70px;
+            width: 70px;
+            background-color: orange;
+            border: 2px solid black;
+            z-index: 1;
+        }
+
+        .n1 {
+            margin-right: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid p-0  ffff">
+        <div id="image">
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="nav">
+                <div class="container-fluid pp d-flex">
+                    <div>
+                        <a class="navbar-brand fs-4 text-center" id="hh" href="#">
+
+                            <img src="111-01.png" alt="" id="kk2">
+                            <span class="text-light">M</span>averick <span class="text-light">D</span>resses</a>
+                    </div>
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+
+
+
+                        <ul class="navbar-nav gap-5 hh">
+                            <li class="nav-item">
+                                <a class="" style="--clr: #95d4bf" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="" style="--clr: #95d4bf" href="product page.html">Products</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="" style="--clr: #95d4bf" href="registration.html">Registration</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="" style="--clr: #95d4bf" href="about.html">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="" style="--clr: #95d4bf" href="Contact us.html">Contact Us</a>
+                            </li>
+                            <!-- <svg xmlns="http://www.w3.org/2000/svg" class="hp" width="20" height="20" fill="currentColor"
+                        class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                        <path
+                          d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5" />
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="hppp" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                          d="M6.998 4v7l5-2.5l5 2.5V4h3a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1h-16a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm5 4l-4.5-5h9zm1 3.236l-1-.5l-1 .5V20h2zm2 2.764v2h4v-2z" />
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="hpp" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                          d="M20.04 8.71V4h-4.7L12 .69L8.71 4H4v4.71L.69 12L4 15.34v4.7h4.71L12 23.35l3.34-3.31h4.7v-4.7L23.35 12zM8.83 7.05c.98 0 1.77.79 1.77 1.78a1.77 1.77 0 0 1-1.77 1.77c-.99 0-1.78-.79-1.78-1.77c0-.99.79-1.78 1.78-1.78M15.22 17c-.98 0-1.77-.8-1.77-1.78a1.77 1.77 0 0 1 1.77-1.77c.98 0 1.78.79 1.78 1.77A1.78 1.78 0 0 1 15.22 17m-6.72.03L7 15.53L15.53 7l1.5 1.5z" />
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="hpppp" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                          d="M2 3.993A1 1 0 0 1 2.992 3h18.016c.548 0 .992.445.992.993v16.014a1 1 0 0 1-.992.993H2.992A.993.993 0 0 1 2 20.007zM6 15v2h12v-2zm0-8v6h6V7zm8 0v2h4V7zm0 4v2h4v-2zM8 9h2v2H8z" />
+                      </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="hppppp" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                          d="M16 11V8h-3V6h3V3h2v3h3v2h-3v3zm3.95 10q-3.125 0-6.187-1.35T8.2 15.8q-2.5-2.5-3.85-5.55T3 4.05V3h5.9l.925 5.025l-2.85 2.875q.55.975 1.225 1.85t1.45 1.625q.725.725 1.588 1.388T13.1 17l2.9-2.9l5 1.025V21z" />
+                      </svg> -->
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="dropdown"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <ul class="dropdown-menu bg-dark">
+                            <li><a class="dropdown-item text-light" href="index.html">Home</a></li>
+                            <li><a class="dropdown-item text-light" href="product page.html">Products</a></li>
+                            <li>
+                                <a class="dropdown-item text-light" href="registration.html">Registration</a>
+                            </li>
+                            <li><a class="dropdown-item text-light" href="about.html">About Us</a></li>
+                            <li>
+                                <a class="dropdown-item text-light" href="Contact us.html">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- <button class="btn"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" id="hhh" viewBox="0 0 20 20"><path fill="orange" d="M1.36 9.495v7.157h3.03l.153.018c2.813.656 4.677 1.129 5.606 1.422c1.234.389 1.694.484 2.531.54c.626.043 1.337-.198 1.661-.528c.179-.182.313-.556.366-1.136a.681.681 0 0 1 .406-.563c.249-.108.456-.284.629-.54c.16-.234.264-.67.283-1.301a.682.682 0 0 1 .339-.57c.582-.337.87-.717.93-1.163c.066-.493-.094-1.048-.513-1.68a.683.683 0 0 1 .176-.936c.401-.282.621-.674.676-1.23c.088-.886-.477-1.541-1.756-1.672a9.42 9.42 0 0 0-3.394.283a.68.68 0 0 1-.786-.95c.5-1.058.778-1.931.843-2.607c.085-.897-.122-1.547-.606-2.083c-.367-.406-.954-.638-1.174-.59c-.29.062-.479.23-.725.818c-.145.348-.215.644-.335 1.335c-.115.656-.178.952-.309 1.34c-.395 1.176-1.364 2.395-2.665 3.236a11.877 11.877 0 0 1-2.937 1.37a.676.676 0 0 1-.2.03zm-.042 8.52c-.323.009-.613-.063-.856-.233c-.31-.217-.456-.559-.459-.953l.003-7.323c-.034-.39.081-.748.353-1.014c.255-.25.588-.368.94-.36h2.185A10.505 10.505 0 0 0 5.99 6.95c1.048-.678 1.82-1.65 2.115-2.526c.101-.302.155-.552.257-1.14c.138-.789.224-1.156.422-1.628c.41-.982.948-1.462 1.69-1.623c.73-.158 1.793.263 2.465 1.007c.745.824 1.074 1.855.952 3.129c-.052.548-.204 1.161-.454 1.844a10.509 10.509 0 0 1 2.578-.056c2.007.205 3.134 1.512 2.97 3.164c-.072.712-.33 1.317-.769 1.792c.369.711.516 1.414.424 2.1c-.106.79-.546 1.448-1.278 1.959c-.057.693-.216 1.246-.498 1.66a2.87 2.87 0 0 1-.851.834c-.108.684-.335 1.219-.706 1.595c-.615.626-1.714.999-2.718.931c-.953-.064-1.517-.18-2.847-.6c-.877-.277-2.693-.737-5.43-1.377zm1.701-8.831a.68.68 0 0 1 .68-.682a.68.68 0 0 1 .678.682v7.678a.68.68 0 0 1-.679.681a.68.68 0 0 1-.679-.681z"/></svg>
+                  </button> -->
+            </nav>
+
+            <!-- <div class="nav">
+                <div class="logo">
+                    <h1>Maverick</h1>
+                </div> -->
+            <!-- <nav>
+              <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Offers</a></li>
+                <li><a href="#">All Products</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+              <svg xmlns="http://www.w3.org/2000/svg" class="hp" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"/>
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="hpp" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M20.04 8.71V4h-4.7L12 .69L8.71 4H4v4.71L.69 12L4 15.34v4.7h4.71L12 23.35l3.34-3.31h4.7v-4.7L23.35 12zM8.83 7.05c.98 0 1.77.79 1.77 1.78a1.77 1.77 0 0 1-1.77 1.77c-.99 0-1.78-.79-1.78-1.77c0-.99.79-1.78 1.78-1.78M15.22 17c-.98 0-1.77-.8-1.77-1.78a1.77 1.77 0 0 1 1.77-1.77c.98 0 1.78.79 1.78 1.77A1.78 1.78 0 0 1 15.22 17m-6.72.03L7 15.53L15.53 7l1.5 1.5z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="hppp" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6.998 4v7l5-2.5l5 2.5V4h3a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1h-16a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm5 4l-4.5-5h9zm1 3.236l-1-.5l-1 .5V20h2zm2 2.764v2h4v-2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="hpppp" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M2 3.993A1 1 0 0 1 2.992 3h18.016c.548 0 .992.445.992.993v16.014a1 1 0 0 1-.992.993H2.992A.993.993 0 0 1 2 20.007zM6 15v2h12v-2zm0-8v6h6V7zm8 0v2h4V7zm0 4v2h4v-2zM8 9h2v2H8z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="hppppp" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M16 11V8h-3V6h3V3h2v3h3v2h-3v3zm3.95 10q-3.125 0-6.187-1.35T8.2 15.8q-2.5-2.5-3.85-5.55T3 4.05V3h5.9l.925 5.025l-2.85 2.875q.55.975 1.225 1.85t1.45 1.625q.725.725 1.588 1.388T13.1 17l2.9-2.9l5 1.025V21z"/></svg>
+            </nav> -->
+            <div class="container-fluid">
+                <div class="categories">
+                    <section class="highlight pt-5">
+                        <div class="container boxx">
+                            <div class="row">
+                                <H1 class="text-center headdd"><STRong>PRODUCTS</STRong></H1>
+
+                                <div class="col-lg-4 .col-sm-12 d-flex">
+                                    <div class="rec mx-auto">
+                                        <h3 class="cat">
+                                            <a href="#school-shirts" class="cats">BOYS SHIRTS</a>
+                                        </h3>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-4 .col-sm-12 d-flex">
+                                    <div class="rec mx-auto">
+                                        <h3 class="cat">
+                                            <a class="cats" href="#boys-pants"> BOYS PANTS</a>
+                                        </h3>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-4 .col-sm-12 d-flex">
+                                    <div class="rec mx-auto">
+                                        <h3 class="cat">
+                                            <a class="cats" href="#girls-frocks"> GIRLS FROCKS</a>
+                                        </h3>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-4 .col-sm-12 d-flex">
+                                    <div class="rec mx-auto">
+                                        <h3 class="cat">
+                                            <a class="cats" href="#girls-skirts"> GIRLS SKIRTS</a>
+                                        </h3>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-4 .col-sm-12 d-flex">
+                                    <div class="rec mx-auto">
+                                        <h3 class="cat">
+                                            <a class="cats" href="#school-monograms"> SCHOOL MONOGRAMS</a>
+                                        </h3>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-4 .col-sm-12 d-flex">
+                                    <div class="rec mx-auto">
+                                        <h3 class="cat">
+                                            <a class="cats" href="#school-socks"> SCHOOL SOCKS</a>
+                                        </h3>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-4 .col-sm-12 d-flex">
+                                    <div class="rec mx-auto">
+                                        <h3 class="cat">
+                                            <a class="cats" href="#school-p-t-t-shirt"> SCHOOL P-T T-SHIRTS</a>
+                                        </h3>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-4 .col-sm-12 d-flex">
+                                    <div class="rec mx-auto">
+                                        <h3 class="cat">
+                                            <a class="cats" href="#school-p-t-shorts"> SCHOOL P-T- SHORTS</a>
+                                        </h3>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-4 .col-sm-12 d-flex">
+                                    <div class="rec mx-auto">
+                                        <h3 class="cat">
+                                            <a class="cats" href="#school-belts"> SCHOOL BELTS</a>
+                                        </h3>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <div class="max  mx-auto">
+                                        <h3 class="cat">
+                                            <a class="cats" href="#school-tie"> SCHOOL TIES</a>
+                                        </h3>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="main2">
+        <div class="container" id="Boys">
+            <div class="row mx-auto">
+
+                <h4 id="school-shirts" class="text-center mt-5 mb-5"><Strong>BOYS SHIRTS</Strong></h4>
+
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card  clr">
+                        <div class="highlight-thumb">
+                            <img src="shirt3.jpg" class="card-img-top highlight-image img-fluid rounded size" alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h2 txt">School Shirt</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                499
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card clr">
+                        <div class="highlight-thumb">
+                            <img src="shirt2.jpg" class="card-img-top highlight-image img-fluid rounded size" alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h2 txt">School Shirt</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                499
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card clr">
+                        <div class="highlight-thumb">
+                            <img src="SHIRT 4.jpeg" class="card-img-top highlight-image img-fluid rounded size"
+                                alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h2 txt">School Shirt</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                499
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 id="boys-pants" class="text-center mt-5 mb-5"><Strong>BOYS PANTS</Strong></h4>
+
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card clr">
+                        <div class="highlight-thumb">
+                            <img src="pant1 (2).jpg" class="card-img-top highlight-image img-fluid rounded size"
+                                alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h2 txt">School Pant</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                399
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card clr">
+                        <div class="highlight-thumb">
+                            <img src="pant2 (2).jpg" class="card-img-top highlight-image img-fluid rounded size"
+                                alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h2 txt">School Pant</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                399
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card clr">
+                        <div class="highlight-thumb">
+                            <img src="pant3.jpg" class="card-img-top highlight-image img-fluid rounded size" alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h2 txt">School Pant</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                399
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+
+        <div class="container" id="Girls">
+            <div class="row mx-auto">
+                <h4 id="girls-frocks" class="text-center mt-5 mb-5"><Strong>GIRLS FROCKS</Strong></h4>
+
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card clr">
+                        <div class="highlight-thumb">
+                            <img src="Frock1.jpg" class="card-img-top highlight-image img-fluid rounded size" alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h2 txt">School Frock</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                499
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card clr">
+                        <div class="highlight-thumb">
+                            <img src="Frock2.jpg" class="card-img-top highlight-image img-fluid rounded size" alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h2 txt">School Frock</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                499
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card clr">
+                        <div class="highlight-thumb">
+                            <img src="Frock3.jpg" class="card-img-top highlight-image img-fluid rounded size" alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h2 txt">School Frock</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                499
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 id="girls-skirts" class="text-center mt-5 mb-5"><Strong>GIRLS SKIRTS</Strong></h4>
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card clr">
+                        <div class="highlight-thumb">
+                            <img src="SKIRTTTT.jpg" class="card-img-top highlight-image img-fluid rounded size"
+                                alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h2 txt">School Skirt</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                399
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card clr">
+                        <div class="highlight-thumb">
+                            <img src="SKIRTTT.jpg" class="card-img-top highlight-image img-fluid rounded size"
+                                alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h4 txt">School Skirt</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                399
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card clr">
+                        <div class="highlight-thumb">
+                            <img src="SKIRRTT.jpg" class="card-img-top highlight-image img-fluid rounded size"
+                                alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h4 txt">School Skirt</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                399
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="container" id="Asseccories">
+            <div class="row mx-auto">
+
+                <h4 id="school-monograms" class="text-center mt-5 mb-5"><Strong>SCHOOL MONOGRAMS</Strong></h4>
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card clr">
+                        <div class="highlight-thumb">
+                            <img src="monogram1.jpeg" class="card-img-top highlight-image img-fluid rounded size"
+                                alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h2 txt">School Monogram</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                149
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card clr">
+                        <div class="highlight-thumb">
+                            <img src="M.jpeg" class="card-img-top highlight-image img-fluid rounded size" alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h2 txt">School Monogram</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                149
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card clr">
+                        <div class="highlight-thumb">
+                            <img src="N.jpg" class="card-img-top highlight-image img-fluid rounded size" alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h2 txt">School Monogram</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                149
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 id="school-socks" class="text-center mt-5 mb-5"><Strong>SCHOOL SOCKS</Strong></h4>
+
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card clr">
+                        <div class="highlight-thumb">
+                            <img src="socks1.jpg" class="card-img-top highlight-image img-fluid rounded size" alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h2 txt">School Socks (black)</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                149
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card clr">
+                        <div class="highlight-thumb">
+                            <img src="socks2.jpg" class="card-img-top highlight-image img-fluid rounded size" alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h2 txt">School Socks (white)</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                149
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card clr">
+                        <div class="highlight-thumb">
+                            <img src="socks3.jpeg" class="card-img-top highlight-image img-fluid rounded size"
+                                alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h2 txt">School Socks (grey)</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                149
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <h4 id="school-p-t-t-shirt" class="text-center mt-5 mb-5"><Strong>SCHOOL P-T T-SHIRT</Strong></h4>
+
+
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card clr">
+                        <div class="highlight-thumb">
+                            <img src="ptshirt.jpg" class="card-img-top highlight-image img-fluid rounded size"
+                                alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h2 txt">School P-T Shirt</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                449
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card clr">
+                        <div class="highlight-thumb">
+                            <img src="pt tshirt.jpg" class="card-img-top highlight-image img-fluid rounded size"
+                                alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h2 txt">School P-T Shirt</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                449
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card clr">
+                        <div class="highlight-thumb">
+                            <img src="pt shirtt.jpg" class="card-img-top highlight-image img-fluid rounded size"
+                                alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h2 txt">School P-T Shirt</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                449
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <h4 id="school-p-t-shorts" class="text-center mt-5 mb-5"><Strong>SCHOOL P-T SHORTS</Strong></h4>
+
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card clr">
+                        <div class="highlight-thumb">
+                            <img src="pt shrt.jpg" class="card-img-top highlight-image img-fluid rounded size"
+                                alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h2 txt">School P-T Short</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                399
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card clr">
+                        <div class="highlight-thumb">
+                            <img src="ptshrt.jpg" class="card-img-top highlight-image img-fluid rounded size" alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h2 txt">School P-T Short</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                399
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card clr">
+                        <div class="highlight-thumb">
+                            <img src="ptshrt1.jpg" class="card-img-top highlight-image img-fluid rounded size"
+                                alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h2 txt">School P-T Short</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                399
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 id="school-belts" class="text-center mt-5 mb-5"><Strong>SCHOOL BELTS</Strong></h4>
+
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card clr">
+                        <div class="highlight-thumb">
+                            <img src="belt1 (2).jpg" class="card-img-top highlight-image img-fluid rounded size"
+                                alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h2 txt">School Belt(black)</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                349
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card clr">
+                        <div class="highlight-thumb">
+                            <img src="belt2.jpg" class="card-img-top highlight-image img-fluid rounded size" alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h2 txt">School Belt(brown)</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                349
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card clr">
+                        <div class="highlight-thumb">
+                            <img src="belt3.jpg" class="card-img-top highlight-image img-fluid rounded size" alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h2 txt">School Belt(red)</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                349
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 id="school-tie" class="text-center mt-5 mb-5"><Strong>SCHOOL TIE</Strong></h4>
+
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card clr">
+                        <div class="highlight-thumb">
+                            <img src="Tie1.jpg" class="card-img-top highlight-image img-fluid rounded size" alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h2 txt">Tie</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                249
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card clr">
+                        <div class="highlight-thumb">
+                            <img src="Tie2.jpg" class="card-img-top highlight-image img-fluid rounded size" alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h2 txt">Tie</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                249
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 .col-md-6 .col-sm-12 mx-auto mb-3">
+                    <div class="card clr">
+                        <div class="highlight-thumb">
+                            <img src="Tie3.jpg" class="card-img-top highlight-image img-fluid rounded size" alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title h2 txt">Tie</h5>
+                            <p class="card-text txt">
+                                <strong>Price:</strong>
+                                249
+                            </p>
+                            <a href="form.html">
+                                <button class="btn but">Buy Now!</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    </div>
+    </div>
+    <footer>
+        <div class="container-fluid">
+            <div class="row main">
+                <div class="f1 col-lg-6 .col-12 d-flex  mt-3">
+                    <div class="n1">
+                        <h4 class="foot">Useful Links</h4>
+                        <ul id="lst2">
+                            <li><i class="bi bi-dash"></i> <a class="anchor" href="#">Home</a></li>
+                            <li><i class="bi bi-dash"></i> <a class="anchor" href="#">About us</a></li>
+                            <li><i class="bi bi-dash"></i> <a class="anchor" href="#">Services</a></li>
+                            <li><i class="bi bi-dash"></i> <a class="anchor" href="#">Terms of service</a></li>
+                            <li><i class="bi bi-dash"></i> <a class="anchor" href="#">Privacy policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="n1">
+                        <h4 class="foot">Customer Support</h4>
+                        <ul id="lst1">
+                            <li><i class="bi bi-dash"></i> <a class="anchor" href="#">Shipping & Handling</a></li>
+                            <li><i class="bi bi-dash"></i> <a class="anchor" href="#">Reviews / Feedback</a></li>
+                            <li><i class="bi bi-dash"></i> <a class="anchor" href="#">Complaints / Exchange</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="f2 col-lg-6 .col-12 d-flex mt-3">
+                    <div class="n1">
+                        <h4 class="foot">Address</h4>
+                        <p>B178 Ritter Street <br>
+                            New York, NY 177432<br>
+                            United States <br><br></p>
+                    </div>
+                    <div class="n1">
+                        <h4 class="foot">Contact Us</h4>
+                        <p>
+                            <strong>Phone:</strong> 845-750-2722<br>
+                            <strong>Email:</strong> maverickdresses.com<br>
+                        </p>
+                    </div>
+                </div>
+                <div id="foot2">
+                    <input type="email" placeholder="Enter Your Email..." class="input ps-4"><!-- HTML !-->
+                    <button class="button-71 btn7" role="button">Sign Up</button>
+                </div>
+            </div>
+
+            <div class="footer-legal main">
+                <div class="container">
+                    <div class="copyright text-center">
+                        &copy; Copyright <strong><span>Maverick Dresses</span></strong>. All Rights Reserved
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div>
+        <button id="btn6" class="rounded-circle"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                viewBox="0 0 24 24">
+                <g fill="none" fill-rule="evenodd">
+                    <path
+                        d="M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+                    <path fill="currentColor"
+                        d="M10.94 7.94a1.5 1.5 0 0 1 2.12 0l5.658 5.656a1.5 1.5 0 1 1-2.122 2.121L12 11.122l-4.596 4.596a1.5 1.5 0 1 1-2.122-2.12z" />
+                </g>
+            </svg></button>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).scroll(function () {
+            let st = $("html").scrollTop();
+            if (st > 200) {
+                $("#nav").css({ backgroundColor: "black", height: "115px" });
+            } else {
+                $("#nav").css({ backgroundColor: "", height: "" });
+            }
+        });
+        //Scroll Top
+        $("#bt5").click(function () {
+            // let st = $("html") .scrollTop();
+            // console. log(st)
+            $("html").scrollTop(0)
+        })
+        $("#btn6").click(function () {
+            $("html").animate({ "scrollTop": "0" }, 1000)
+        })
+        $("#btn6").slideUp();
+        $(document).scroll(function () {
+
+            let st = $("html").scrollTop();
+            if (st > 200) {
+                $("#btn6").slideDown();
+            } else {
+                $("#btn6").slideUp();
+            }
+        })
+    </script>
+</body>
+
+</html>

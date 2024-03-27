@@ -1,0 +1,365 @@
+@font-face {
+    font-family: myFont;
+    src: url(Azonix.otf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: myFont;
+    letter-spacing: 0.1em;
+}
+.contact{
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: url(cp.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.contact .content{
+    max-width: 800px;
+    text-align: center;
+}
+#btn6{
+  position: fixed;
+  bottom: 50px;
+  left:1200px;
+  height: 70px;
+  width: 70px;
+  background-color: orange;
+  border: 2px solid black;
+  z-index: 1;
+}
+.contact .content h2{
+    font-size: 36px;
+    font-weight: 500;
+    margin-top: 20%;
+    color: #ffa500;
+}
+.contact .content p{
+    font-weight: 500;
+    color: #ffa500;
+}
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.container .contactInfo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.container .contactInfo .box{
+    position: relative;
+    padding: 20px 0px;
+    display: flex;
+}
+.container .contactInfo .box .icon{
+   min-width: 40px;
+   height: 40px;
+   background: #ffa500;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 50%;
+   font-size: 22px;
+}
+.container .contactInfo .box .text{
+    display: flex;
+    margin-left: 20px;
+    font-size: 16px;
+    color: #ffffff;
+    flex-direction: column;
+    font-weight: 400;
+ }
+ .container .contactInfo .box h3{
+    font-weight: 500;
+    color: #ffa500;
+ }
+.contactForm{
+    width: 40%;
+    padding: 40px;
+    background-color: #ffa500;
+    border-radius: 30px;
+    margin-top: 70px;
+
+}
+.contactForm h2{
+   font-size: 30px;
+   color: #fcfcfc;
+   font-weight: 500;
+}
+.contactForm .inputBox{
+    position: relative;
+    width: 100%;
+    margin-top: px;
+    padding: 30px;
+    
+}
+.contactForm .inputBox input{
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 16px;
+    margin: 6px 0px;
+    border: none;
+    border-bottom: 2px solid #f5f5f4;
+    outline: none;
+    resize: none;
+    border-radius: 40px;
+    
+}
+.contactForm .inputBox textarea{
+    width: 100%;
+    padding: 10px 10px;
+    font-size: 16px;
+    margin: 6px 0px;
+    border: none;
+    border-bottom: 2px solid #f5f5f4;
+    outline: none;
+    resize: none;
+    border-radius: 40px;
+    height: 140px;
+    
+}
+.contactForm .inputBox span{
+    position: absolute;
+    left: 45px;
+    padding: 5px 0;
+    font-size: 16px;
+    margin:10px 0px;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #070707;
+}
+.contactForm .inputBox input:focus ~ span,
+.contactForm .inputBox input:valid ~ span
+.contactForm .inputBox textarea:focus ~ span,
+.contactForm .inputBox textarea:valid ~ span
+{
+   color: #000;
+   font-size: 12px;
+   transform: translateY(-40px);
+}
+#submit{
+    width: 200px;
+    background-color: #080808;
+    color: #ffa500;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 30px;
+}
+#submit:hover{
+    background-color: orange;
+    border: 2px solid black;
+    color: black;
+    text-decoration: underline;
+    font-weight: bolder;
+}
+textarea{
+    width: 100%;
+    padding: 5px 0px;
+    font-size: 16px;
+    margin:10px px;
+    border: none;
+    border-bottom: 2px solid #f5f5f4;
+    outline: none;
+    resize: none;
+}
+#nav{
+    width: 100%;
+    position: fixed;
+}
+nav ul li a:hover{
+    color: #ccc;
+    text-decoration: underline #ccc;
+    text-shadow: 0 0 12px #ccc;
+}
+nav ul li a {
+    text-decoration: none;
+    color: orange;
+    
+  }
+  .hp{
+    margin-top:-30px; 
+    margin-left:-710px;
+    color: orange;
+    cursor: pointer;
+    }
+    .hpp{
+      margin-top:-30px;
+      margin-left:90px;
+      color: orange;
+      cursor: pointer;
+    }
+    .hppp{
+      margin-top:-30px;
+      margin-left:50px;
+      color: orange;
+      cursor: pointer;
+    }
+    .hpppp{
+      margin-top:-30px ;
+      margin-left:90px ;
+      color: orange;
+      cursor: pointer;
+    }
+    .hppppp{
+      margin-top:-30px;
+      margin-left:70px ;
+      color: orange;
+      cursor: pointer;
+    }
+    .n1{
+      margin-right: 100px;
+  }
+    .hp:hover{
+      color: #ccc;
+    }
+    .hpp:hover{
+      color: #ccc;
+    }
+    .hppp:hover{
+      color: #ccc;
+    }
+    .hpppp:hover{
+      color: #ccc;
+    }
+    .hppppp:hover{
+      color: #ccc;
+    }
+  #navbarNav{
+    color: orange;
+    /* margin-top: 20px;
+    margin-right: 110px; */
+  }
+  #hhh{
+    margin-top: -9px;
+    margin-right: 30px;
+    color: orange;
+  }
+  #hh{
+    margin-top: -50px;
+    color: orange;
+  }
+  .pp{
+    /* margins-top: 55px; */
+    /* margin-left: 30px;
+    margin-right: 20px; */
+  }
+  .tex {
+    text-align: center;
+    color: orange;
+    letter-spacing: 0.25em;
+    display: inline-block;
+  }
+  .hd{
+    top: 20px;
+    left: 10px;
+    border: none;
+  }
+  #kk2{
+    width: 40px;
+    height: 40px;
+  }
+  #kk{
+    width: 300px;
+    height: 250px;
+  }
+  /* footer */
+  .main{
+    padding: 80px 90px 20px 80px;
+    line-height: 50px;
+    color: white;
+    background-color: black;
+  }
+  footer{
+    border-top: 2px solid orange;
+  }
+  .anchor{
+    color: white;
+    text-decoration: none;
+  }
+  .foot{
+    color: orange;
+  }
+  .input{
+    width: 50%;
+    height: 75px;
+    border-radius: 8px;
+  }
+  .btn7{
+    margin-left: 15px;
+  }
+  /* CSS */
+  .button-71 {
+    background-color: orange;
+    border: 0;
+    border-radius: 56px;
+    color: black;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 600;
+    outline: 0;
+    padding: 16px 21px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .button-71:before {
+    background-color: initial;
+    background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+    border-radius: 125px;
+    content: "";
+    height: 50%;
+    left: 4%;
+    opacity: .5;
+    position: absolute;
+    top: 5px;
+    transition: all .3s;
+    width: 92%;
+  }
+  
+  .button-71:hover {
+    box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+    transform: scale(1.05);
+  }
+  
+  @media (min-width: 768px) {
+    .button-71 {
+      padding: 16px 48px;
+    }
+  }
+  #foot2{
+    display: flex;
+    color: white;
+    background-color: black;
+    margin-bottom: -55px;
+    margin-top: 55px;
+    justify-content: center;
+  }
+  #lst1{
+    list-style: none;
+    margin-left: -30px;
+  }
+  #lst2{
+    list-style: none;
+    margin-left: -30px;
+  }
